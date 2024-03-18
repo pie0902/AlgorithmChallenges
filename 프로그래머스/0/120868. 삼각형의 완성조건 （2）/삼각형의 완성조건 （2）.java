@@ -1,5 +1,4 @@
-class Solution {
-    
+class Solution {   
     public int big(int a,int b){
         if(a>b){
             return a;
@@ -16,24 +15,21 @@ class Solution {
             return a;
         }
     }
-    
     public int solution(int[] sides) {
         int answer = 0;
-        int idx = 1;
-        int t = 0;
-        int one = small(sides[0],sides[1]);
-        int two = big(sides[0],sides[1]);
-        while(one+idx<one+two){ 
-        t = one + idx;
-         if(t>two){  
-            answer++;
-         }
-         idx++;
+        int c = 0;
+        int a = small(sides[0],sides[1]);
+        int b = big(sides[0],sides[1]);
+        //3 6
+        //3 + 0 > 6
+        //0 < 9
+        while(c<=a+b){
+            c++;
+            if(a+c>b&&c<a+b){
+                answer++;
+            }
         }
-        System.out.println(idx);
-        System.out.println(answer);
-        
-        
-        return answer*2+1;
+        System.out.println(c);
+        return answer;
     }
 }
