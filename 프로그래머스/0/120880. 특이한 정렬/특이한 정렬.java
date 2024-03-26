@@ -11,14 +11,13 @@ class Solution {
                 this.ogIndx = ogIndx;
                 this.minus = minus;
             }
-@Override
-public int compareTo(TestEntity other) {
-    if (this.minus == other.minus) {
-        return Integer.compare(other.og, this.og);
-    }
-    return Integer.compare(this.minus, other.minus);
-}
-
+            @Override
+            public int compareTo(TestEntity other) {
+                if (this.minus == other.minus) {
+                    return Integer.compare(other.og, this.og);
+                }
+                return Integer.compare(this.minus, other.minus);
+            }
         }
         public static TestEntity[] makeEntity(int[] nums, int n) {
             TestEntity[] test = new TestEntity[nums.length];
