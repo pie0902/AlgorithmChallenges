@@ -1,12 +1,13 @@
 import java.util.*;
 class Solution {
     public long solution(int n) {
-        List<Long> list = new ArrayList<>();
-        list.add(1L);
-        list.add(1L);
-        for(int i = 2; i<=n; i++){
-            list.add((list.get(i-1) + list.get(i-2))%1234567);
+        long a = 0;
+        long b = 1;
+        for(int i = 0; i<n; i++){
+            long temp = b;
+            b = (a+b)%1234567;
+            a = temp;
         }
-        return list.get(n);
+        return b;
     }
 }
