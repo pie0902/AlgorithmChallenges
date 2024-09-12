@@ -1,16 +1,15 @@
 class Solution {
     public int[] solution(int brown, int yellow) {
         int total = brown + yellow;
-        
-        for(int w = 3; w<=total / 3; w++){
-            if(total%w == 0){
-                int h = total/w;
-                if((w-2)*(h-2) == yellow){
-                    return new int[]{h,w};
+        //가로가 세로보다 커야함
+         for(int i = 3; i<=total; i++){
+            if(total%i == 0){
+                int j = total/ i; //<- 세로길이
+                if((i-2)*(j-2)==yellow){
+                    return new int[]{j,i};
                 }
             }
-        }
+         }
         return null;
-        
     }
 }
